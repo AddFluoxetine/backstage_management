@@ -1,7 +1,7 @@
 /*
  * @Author: Ue
  * @Date: 2022-03-28 20:37:21
- * @LastEditTime: 2022-03-30 13:42:42
+ * @LastEditTime: 2022-03-31 22:07:16
  * @LastEditors: Ue
  * @FilePath: /work-space/react-admin-client/src/pages/Login/index.jsx
  */
@@ -39,7 +39,19 @@ export default function Login() {
             rules={[
               {
                 required: true,
-                message: "Please input your Username!",
+                message: "请输入用户名！",
+              },
+              { min: 4, message: "用户名不可少于4位" },
+              { max: 12, message: "用户名不可多于16位" },
+              {
+                validator(_, value) {
+                  if (/^[a-zA-Z0-9_]+$/.test(value)) {
+                    return Promise.resolve();
+                  }
+                  return Promise.reject(
+                    new Error("密码必须是英文、数字或下划线组成")
+                  );
+                },
               },
             ]}
           >
@@ -53,7 +65,19 @@ export default function Login() {
             rules={[
               {
                 required: true,
-                message: "Please input your Password!",
+                message: "请输入密码！",
+              },
+              { min: 4, message: "密码不可少于4位" },
+              { max: 12, message: "密码不可多于16位" },
+              {
+                validator(_, value) {
+                  if (/^[a-zA-Z0-9_]+$/.test(value)) {
+                    return Promise.resolve();
+                  }
+                  return Promise.reject(
+                    new Error("密码必须是英文、数字或下划线组成")
+                  );
+                },
               },
             ]}
           >
