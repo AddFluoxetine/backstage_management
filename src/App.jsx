@@ -1,7 +1,7 @@
 /*
  * @Author: Ue
  * @Date: 2022-03-28 13:21:23
- * @LastEditTime: 2022-03-29 18:51:52
+ * @LastEditTime: 2022-03-30 13:39:09
  * @LastEditors: Ue
  * @FilePath: /work-space/react-admin-client/src/App.jsx
  */
@@ -15,7 +15,7 @@ import Login from "./pages/Login";
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<Admin />} />
+      <Route path="" element={<Admin />} />
       <Route path="login" element={<Login />} />
       <Route
         path="*"

@@ -1,7 +1,7 @@
 /*
  * @Author: Ue
  * @Date: 2022-03-29 19:16:34
- * @LastEditTime: 2022-03-29 19:16:43
+ * @LastEditTime: 2022-03-29 21:01:38
  * @LastEditors: Ue
  * @FilePath: /work-space/react-admin-client/public/css/reset.css
  */
@@ -83,4 +83,11 @@ table {
 td,
 th {
   padding: 0;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
 }

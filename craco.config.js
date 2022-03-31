@@ -1,7 +1,7 @@
 /*
  * @Author: Ue
  * @Date: 2022-03-28 13:45:50
- * @LastEditTime: 2022-03-28 17:33:40
+ * @LastEditTime: 2022-03-30 14:01:34
  * @LastEditors: Ue
  * @FilePath: /work-space/react-admin-client/craco.config.js
  */
@@ -16,7 +16,7 @@ module.exports = {
         lessLoaderOptions: {
           lessOptions: {
             modifyVars: {
-              "@primary-color": "#1DA57A",
+              "@primary-color": "#282c34",
             },
             javascriptEnabled: true,
           },
