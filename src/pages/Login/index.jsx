@@ -1,7 +1,7 @@
 /*
  * @Author: Ue
  * @Date: 2022-03-28 20:37:21
- * @LastEditTime: 2022-03-31 22:07:16
+ * @LastEditTime: 2022-04-01 18:44:20
  * @LastEditors: Ue
  * @FilePath: /work-space/react-admin-client/src/pages/Login/index.jsx
  */
@@ -29,9 +29,7 @@ export default function Login() {
         <Form
           name="normal_login"
           className="login-form"
-          initialValues={{
-            remember: true,
-          }}
+          autoComplete="off"
           onFinish={onFinish}
         >
           <Form.Item
@@ -57,7 +55,7 @@ export default function Login() {
           >
             <Input
               prefix={<UserOutlined className="site-form-item-icon" />}
-              placeholder="Username"
+              placeholder="用户名"
             />
           </Form.Item>
           <Form.Item
@@ -84,7 +82,7 @@ export default function Login() {
             <Input
               prefix={<LockOutlined className="site-form-item-icon" />}
               type="password"
-              placeholder="Password"
+              placeholder="密码"
             />
           </Form.Item>
           <Form.Item>

@@ -1,7 +1,7 @@
 /*
  * @Author: Ue
  * @Date: 2022-03-28 13:21:23
- * @LastEditTime: 2022-03-30 13:39:09
+ * @LastEditTime: 2022-04-06 11:23:52
  * @LastEditors: Ue
  * @FilePath: /work-space/react-admin-client/src/App.jsx
  */
@@ -11,7 +11,7 @@ import { Routes, Route } from "react-router-dom";
 import Admin from "./pages/Admin";
 import Login from "./pages/Login";
 
-// 应用的根组件
+// 应用的根组件1
 export default function App() {
   return (
     <Routes>
