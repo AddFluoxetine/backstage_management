@@ -1,7 +1,7 @@
 /*
  * @Author: Ue
  * @Date: 2022-03-28 20:37:21
- * @LastEditTime: 2022-04-01 18:44:20
+ * @LastEditTime: 2022-04-25 11:14:29
  * @LastEditors: Ue
  * @FilePath: /work-space/react-admin-client/src/pages/Login/index.jsx
  */
@@ -14,8 +14,8 @@ import "./login.less";
 
 // 登录的路由组件
 export default function Login() {
-  const onFinish = (values) => {
-    console.log("Received values of form: ", values);
+  const onFinish = ({username, password}) => {
+    console.log(`Received values of form:\nusername: ${username}\npassword: ${password}`);
   };
 
   return (
