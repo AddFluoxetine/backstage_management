@@ -1,14 +1,22 @@
 /*
  * @Author: Ue
  * @Date: 2022-03-28 20:39:36
- * @LastEditTime: 2022-03-28 21:21:52
+ * @LastEditTime: 2022-05-08 20:50:48
  * @LastEditors: Ue
- * @FilePath: /work-space/react-admin-client/src/pages/Admin/index.jsx
+ * @FilePath: /react-admin-client/src/pages/Admin/index.jsx
  */
 
 import React from "react";
+import { Navigate } from "react-router-dom";
+
+import memoryUtils from "../../utils/memoryUtils";
 
 //后台管理的路由组件
 export default function Admin() {
-  return <div>Admin</div>;
+  const { user } = memoryUtils;
+  if (!user || !user._id) {
+    return <Navigate to="/login"/>;
+  }else{
+    return <div>Hello, {user.username}!</div>;
+  }
 }

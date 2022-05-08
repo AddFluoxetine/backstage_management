@@ -1,21 +1,37 @@
 /*
  * @Author: Ue
  * @Date: 2022-03-28 20:37:21
- * @LastEditTime: 2022-04-25 11:14:29
+ * @LastEditTime: 2022-05-08 23:51:20
  * @LastEditors: Ue
- * @FilePath: /work-space/react-admin-client/src/pages/Login/index.jsx
+ * @FilePath: /react-admin-client/src/pages/Login/index.jsx
  */
 import React from "react";
-import { Form, Input, Button } from "antd";
+import { Form, Input, Button, message } from "antd";
+import { useNavigate } from "react-router-dom";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
+import { reqLogin } from "../../api";
+import memoryUtils from "../../utils/memoryUtils";
+import storageUtils from "../../utils/storageUtils";
 
 import logo from "./images/logo.svg";
 import "./login.less";
 
 // 登录的路由组件
 export default function Login() {
-  const onFinish = ({username, password}) => {
-    console.log(`Received values of form:\nusername: ${username}\npassword: ${password}`);
+  const navigate = useNavigate();
+  const onFinish = async ({ username, password }) => {
+    console.log(
+      `Received values of form:\nusername: ${username}\npassword: ${password}`
+    );
+    const result = await reqLogin(username, password);
+    if (result.status === 0) {
+      message.success("登录成功！");
+      memoryUtils.user = result.data;
+      storageUtils.saveUser(result.data);
+      navigate("/", { replace: true });
+    } else {
+      message.error(result.msg);
+    }
   };
 
   return (
